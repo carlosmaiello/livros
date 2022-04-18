@@ -27,8 +27,7 @@ class LoginPage extends React.Component {
 
     submitForm (event) {
         event.preventDefault();
-        console.log(this.state);
-        alert(JSON.stringify(this.state));
+        this.props.onLogar({...this.state});
     }
 
     render () {
