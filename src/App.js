@@ -34,7 +34,7 @@ class App extends React.Component {
         estaLogado: true
       });
     }).catch(erro => {
-      alert(erro);
+      alert(erro.mensagem);
     })
   }
 

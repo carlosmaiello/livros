@@ -35,7 +35,19 @@ export const login = async (email, senha) => {
             'Content-Type': 'application/json'
         }
     });
-    return await res.json();
+
+    console.log(res);
+
+    if (res.status < 400) {
+        return await res.json();
+    }
+    else {
+        let erro = await res.json();
+        console.log(erro);
+        throw new Error(erro.mensagem);
+    }
+    
+
 }
 
 export const getLivros = async (token) => {
